@@ -130,23 +130,23 @@ const LandingPage = () => {
               All the players that collected Yellow card must pay before the
               next match:
               <ul className='mt-3'>
-                <div className='flex justify-center gap-4'>
+                <div className='flex justify-center gap-4 items-center'>
                   <li>Bariga</li>
                   <img src={Yellow} alt='yellow' width={10} />
                 </div>
 
                 <br />
-                <div className='flex justify-center gap-4'>
+                <div className='flex justify-center gap-4  items-center'>
                   <li>Azeez</li>
                   <img src={Yellow} alt='yellow' width={10} />
                 </div>
                 <br />
-                <div className='flex justify-center gap-4'>
+                <div className='flex justify-center gap-4  items-center'>
                   <li>Yellow</li>
                   <img src={Yellow} alt='yellow' width={10} />
                 </div>
                 <br />
-                <div className='flex justify-center gap-4'>
+                <div className='flex justify-center gap-4  items-center'>
                   <li>Samson</li>
                   <img src={Yellow} alt='yellow' width={10} />
                 </div>
@@ -154,7 +154,51 @@ const LandingPage = () => {
             </div>
           </TabPanel>
           <TabPanel label='Betting'>
-            <div>Coming soon</div>
+            <div className='flex justify-between bg-slate-500 p-2 text-[#ffffff]'>
+              <div>Wednessday</div>
+              <div className='flex justify-between gap-12'>
+                <div>1</div>
+                <div>X</div>
+                <div>2</div>
+              </div>
+            </div>
+            <div className='flex justify-between gap-5 items-center mt-3'>
+              <div className='font-bold'>
+                <div>D'Real Fc</div>
+                <br />
+                <div>Bella Fc</div>
+              </div>
+              <div className='flex justify-between gap-3'>
+                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                  1.30
+                </div>
+                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                  9.50
+                </div>
+                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                  5.05
+                </div>
+              </div>
+            </div>
+            <hr className='mt-5 text-[blue] ' />
+            <div className='flex justify-between gap-5 items-center mt-3'>
+              <div className='font-bold'>
+                <div>Big Ballers Fc</div>
+                <br />
+                <div>Killing Dem Fc</div>
+              </div>
+              <div className='flex justify-between gap-3'>
+                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                  1.90
+                </div>
+                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                  5.80
+                </div>
+                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                  2.50
+                </div>
+              </div>
+            </div>
           </TabPanel>
         </Tabs>
       </div>
