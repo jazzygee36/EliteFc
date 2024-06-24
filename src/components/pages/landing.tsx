@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Tabs, TabPanel } from '../common/tabs';
 import Bayo from '../../assets/bayo.mp4';
 import Interview from './interview';
@@ -8,7 +8,37 @@ const LandingPage = () => {
   const [firstLeg, setFirstLeg] = useState(false);
   const [secondLeg, setSecondLeg] = useState(false);
   const [final, setFinal] = useState(false);
+  const [odds, setOdds] = useState(0);
+  const [firstOdds] = useState(1.3);
+  const [secondOdds] = useState(9.5);
+  const [thirdOdds] = useState(5.05);
+  const [forthOdds] = useState(1.9);
+  const [fiftOdds] = useState(5.8);
+  const [sixthOdds] = useState(2.5);
 
+  const handleOdds = () => {
+    setOdds((prev) => prev + firstOdds);
+  };
+  const handleSecondOdds = () => {
+    setOdds((prev) => prev + secondOdds);
+  };
+  const handleThirdOdds = () => {
+    setOdds((prev) => prev + thirdOdds);
+  };
+
+  const handleForthOdds = () => {
+    setOdds((prev) => prev + forthOdds);
+  };
+  const handleFifthOdds = () => {
+    setOdds((prev) => prev + fiftOdds);
+  };
+  const handleSixthOdds = () => {
+    setOdds((prev) => prev + sixthOdds);
+  };
+  const [stake, setStake] = useState<any>(0);
+  const sumAmount = useMemo(() => {
+    return stake * odds;
+  }, [stake, odds]);
   const handleSelectChange = (event: any) => {
     if (event.target.value === 'firstLeg') {
       setSecondLeg(false);
@@ -169,13 +199,22 @@ const LandingPage = () => {
                 <div>Bella Fc</div>
               </div>
               <div className='flex justify-between gap-3'>
-                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                <div
+                  onClick={handleOdds}
+                  className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
+                >
                   1.30
                 </div>
-                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                <div
+                  onClick={handleSecondOdds}
+                  className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
+                >
                   9.50
                 </div>
-                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                <div
+                  onClick={handleThirdOdds}
+                  className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
+                >
                   5.05
                 </div>
               </div>
@@ -188,15 +227,43 @@ const LandingPage = () => {
                 <div>Killing Dem Fc</div>
               </div>
               <div className='flex justify-between gap-3'>
-                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                <div
+                  onClick={handleForthOdds}
+                  className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
+                >
                   1.90
                 </div>
-                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                <div
+                  onClick={handleFifthOdds}
+                  className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
+                >
                   5.80
                 </div>
-                <div className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'>
+                <div
+                  onClick={handleSixthOdds}
+                  className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
+                >
                   2.50
                 </div>
+              </div>
+            </div>
+            <div className='text-center mt-8 font-bold capitalize'>
+              Odds: {odds}
+            </div>
+            <div className='flex justify-between gap-3 w-[100%]  items-center align-middle m-auto mt-3'>
+              <div className='flex items-center'>
+                <button className=''>Stake:</button>{' '}
+                <input
+                  type='text'
+                  placeholder='N'
+                  value={stake}
+                  onChange={(e) => {
+                    setStake(e.target.value);
+                  }}
+                />
+              </div>
+              <div className='capitalize text-red-950 font-bold '>
+                Possible Win: {sumAmount}
               </div>
             </div>
           </TabPanel>
