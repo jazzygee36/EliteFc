@@ -159,9 +159,9 @@ const LandingPage = () => {
         </Tabs>
       </div>
 
-      <div className='position relative top-[100%] bg-[#101039] h-[50px] w-[100%]  text-[#ffffff] pt-3 pb-3 text-[12px] text-center'>
+      {/* <div className='position relative  bg-[#101039] h-[50px] w-[100%]  text-[#ffffff] pt-3 pb-3 text-[12px] text-center'>
         Elite Fc
-      </div>
+      </div> */}
     </>
   );
 };
