@@ -37,7 +37,11 @@ const LandingPage = () => {
   };
   const [stake, setStake] = useState<any>(0);
   const sumAmount = useMemo(() => {
-    return stake * odds;
+    {
+      if (stake > 0) {
+        return stake * odds;
+      } else null;
+    }
   }, [stake, odds]);
   const handleSelectChange = (event: any) => {
     if (event.target.value === 'firstLeg') {
@@ -209,13 +213,13 @@ const LandingPage = () => {
                   onClick={handleSecondOdds}
                   className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
                 >
-                  9.50
+                  3.90
                 </div>
                 <div
                   onClick={handleThirdOdds}
                   className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
                 >
-                  5.05
+                  2.08
                 </div>
               </div>
             </div>
@@ -237,13 +241,13 @@ const LandingPage = () => {
                   onClick={handleFifthOdds}
                   className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
                 >
-                  5.80
+                  4.20
                 </div>
                 <div
                   onClick={handleSixthOdds}
                   className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
                 >
-                  2.50
+                  2.03
                 </div>
               </div>
             </div>
@@ -266,13 +270,16 @@ const LandingPage = () => {
                 Possible Win: {sumAmount}
               </div>
             </div>
+
+            <button
+              disabled
+              className='p-3 bg-blue-950 text-[#fff] w-full mt-8 font-semibold text-[16px]'
+            >
+              Place Bet
+            </button>
           </TabPanel>
         </Tabs>
       </div>
-
-      {/* <div className='position relative  bg-[#101039] h-[50px] w-[100%]  text-[#ffffff] pt-3 pb-3 text-[12px] text-center'>
-        Elite Fc
-      </div> */}
     </>
   );
 };
