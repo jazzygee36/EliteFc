@@ -3,18 +3,17 @@ import { Tabs, TabPanel } from '../common/tabs';
 import Bayo from '../../assets/bayo.mp4';
 import Interview from './interview';
 import Yellow from '../../assets/yellow.jpeg';
+import Red from '../../assets/red.jpeg';
+import OfficialsPr from './officialsPress';
 const LandingPage = () => {
   const [isOptionSelected, setIsOptionSelected] = useState(false);
   const [firstLeg, setFirstLeg] = useState(false);
   const [secondLeg, setSecondLeg] = useState(false);
   const [final, setFinal] = useState(false);
   const [odds, setOdds] = useState(0);
-  const [firstOdds] = useState(1.3);
-  const [secondOdds] = useState(9.5);
-  const [thirdOdds] = useState(5.05);
-  const [forthOdds] = useState(1.9);
-  const [fiftOdds] = useState(5.8);
-  const [sixthOdds] = useState(2.5);
+  const [firstOdds] = useState(2.3);
+  const [secondOdds] = useState(4.33);
+  const [thirdOdds] = useState(1.9);
 
   const handleOdds = () => {
     setOdds((prev) => prev + firstOdds);
@@ -26,15 +25,6 @@ const LandingPage = () => {
     setOdds((prev) => prev + thirdOdds);
   };
 
-  const handleForthOdds = () => {
-    setOdds((prev) => prev + forthOdds);
-  };
-  const handleFifthOdds = () => {
-    setOdds((prev) => prev + fiftOdds);
-  };
-  const handleSixthOdds = () => {
-    setOdds((prev) => prev + sixthOdds);
-  };
   const [stake, setStake] = useState<any>(0);
   const sumAmount = useMemo(() => {
     {
@@ -144,12 +134,31 @@ const LandingPage = () => {
                   Sunday 30, June 2024
                 </div>
                 <hr className='mb-5 text-[blue] ' />
-                <div className=' flex mb-8 justify-between font-semibold text-[#707070]'>
-                  <div>5:00pm</div>
-                  <div>loading....</div>
+                <div className='text-[14px] text-[#121212] mb-4 font-semibold capitalize'>
+                  Third place
+                </div>
+                <div className=' flex mb-8 justify-between font-semibold text-[#707070] '>
+                  <div>4:30pm</div>
+
+                  <div>Big Baller's FC</div>
+                  <div>v</div>
+
+                  <div>Bella FC</div>
                 </div>
 
                 <hr className='mb-5 text-[blue] ' />
+                <div className='text-[14px] text-[#121212] mb-4 font-semibold capitalize'>
+                  Final
+                </div>
+
+                <div className=' flex mb-8 justify-between font-semibold text-[#707070]'>
+                  <div>5:30pm</div>
+
+                  <div>D'Real FC</div>
+                  <div>v</div>
+
+                  <div>Big Baller's FC </div>
+                </div>
               </div>
             )}
 
@@ -158,6 +167,9 @@ const LandingPage = () => {
           <TabPanel label='Interviews'>
             <Interview />
           </TabPanel>
+          <TabPanel label='Officals PRs'>
+            <OfficialsPr />
+          </TabPanel>
 
           <TabPanel label='News'>
             <div>
@@ -165,31 +177,24 @@ const LandingPage = () => {
               next match:
               <ul className='mt-3'>
                 <div className='flex justify-center gap-4 items-center'>
-                  <li>Bariga</li>
+                  <li>Michael</li>
                   <img src={Yellow} alt='yellow' width={10} />
                 </div>
 
                 <br />
                 <div className='flex justify-center gap-4  items-center'>
-                  <li>Azeez</li>
-                  <img src={Yellow} alt='yellow' width={10} />
-                </div>
-                <br />
-                <div className='flex justify-center gap-4  items-center'>
-                  <li>Yellow</li>
-                  <img src={Yellow} alt='yellow' width={10} />
-                </div>
-                <br />
-                <div className='flex justify-center gap-4  items-center'>
-                  <li>Samson</li>
-                  <img src={Yellow} alt='yellow' width={10} />
+                  <li>Big Ballers FC goal keep</li>
+                  <div className='flex gap-3'>
+                    <img src={Yellow} alt='yellow' width={10} />
+                    <img src={Red} alt='yellow' width={10} />
+                  </div>
                 </div>
               </ul>
             </div>
           </TabPanel>
           <TabPanel label='Betting'>
             <div className='flex justify-between bg-slate-500 p-2 text-[#ffffff]'>
-              <div>Wednessday</div>
+              <div>Sunday</div>
               <div className='flex justify-between gap-12'>
                 <div>1</div>
                 <div>X</div>
@@ -200,57 +205,30 @@ const LandingPage = () => {
               <div className='font-bold'>
                 <div>D'Real Fc</div>
                 <br />
-                <div>Bella Fc</div>
+                <div>Killing Dem</div>
               </div>
               <div className='flex justify-between gap-3'>
                 <div
                   onClick={handleOdds}
                   className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
                 >
-                  1.30
+                  2.30
                 </div>
                 <div
                   onClick={handleSecondOdds}
                   className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
                 >
-                  3.90
+                  4.33
                 </div>
                 <div
                   onClick={handleThirdOdds}
                   className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
                 >
-                  2.08
-                </div>
-              </div>
-            </div>
-            <hr className='mt-5 text-[blue] ' />
-            <div className='flex justify-between gap-5 items-center mt-3'>
-              <div className='font-bold'>
-                <div>Big Ballers Fc</div>
-                <br />
-                <div>Killing Dem Fc</div>
-              </div>
-              <div className='flex justify-between gap-3'>
-                <div
-                  onClick={handleForthOdds}
-                  className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
-                >
                   1.90
                 </div>
-                <div
-                  onClick={handleFifthOdds}
-                  className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
-                >
-                  4.20
-                </div>
-                <div
-                  onClick={handleSixthOdds}
-                  className='bg-[#0D7B3C] p-3   pl-2 pr-2 text-[#ffffff]'
-                >
-                  2.03
-                </div>
               </div>
             </div>
+
             <div className='text-center mt-8 font-bold capitalize'>
               Odds: {odds}
             </div>
@@ -271,12 +249,11 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <button
-              disabled
-              className='p-3 bg-blue-950 text-[#fff] w-full mt-8 font-semibold text-[16px]'
-            >
-              Place Bet
-            </button>
+            {stake > 0 && (
+              <button className='p-3 bg-blue-950 text-[#fff] w-full mt-8 font-semibold text-[16px]'>
+                Place Bet
+              </button>
+            )}
           </TabPanel>
         </Tabs>
       </div>
