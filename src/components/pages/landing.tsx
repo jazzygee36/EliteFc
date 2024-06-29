@@ -157,7 +157,7 @@ const LandingPage = () => {
                   <div>D'Real FC</div>
                   <div>v</div>
 
-                  <div>Big Baller's FC </div>
+                  <div>Killing Dem </div>
                 </div>
               </div>
             )}
